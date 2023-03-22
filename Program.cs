@@ -9,6 +9,9 @@ using static System.Console;
 Clear();
 string[] check = GetArr();
 Printarr(check);
+string[] check2 = ArrStrLenLess4(check);
+WriteLine(); 
+ Printarr(check2);
 
 string [] GetArr() // метод получения массива строк из одной введеной строки
 {
@@ -30,3 +33,18 @@ void Printarr (string [] arr) // Метод ввыода массива стро
     Console.Write("]");
 }
 
+string [] ArrStrLenLess4(string [] array)// метод выбирающий из изначального массива строки длинной меньше или равно 3
+{
+  
+  string resString = string.Empty;
+  for(int i = 0; i < array.Length; i++)
+  {
+    if (array[i].Length <=3)
+    {
+      resString += array[i] + " "; 
+    }
+  }
+
+string [] result = resString.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+return result;
+}
